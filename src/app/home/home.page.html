@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Example
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+    <div style="text-align: center;">
+      <ion-toolbar>
+        <ion-title>Introduce Yourself</ion-title>
+      </ion-toolbar>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Name:</ion-label>
+            <ion-input [clearInput]="true" placeholder="Enter name" [(ngModel)]="name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Age:</ion-label>
+            <ion-input type="number" [clearInput]="true" placeholder="Enter age(years)" [(ngModel)]="age"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-radio-group [(ngModel)]="gender">
+            <ion-item>
+              <ion-label>Male</ion-label>
+              <ion-radio value="male"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Female</ion-label>
+              <ion-radio value="female"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>What is your favorite color?</ion-label>
+            <ion-input [clearInput]="true" [(ngModel)]="favoriteColor"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>What is your favorite food?</ion-label>
+            <ion-input  [clearInput]="true" [(ngModel)]="favoriteFood"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col align="left">
+          <ion-item>
+            <ion-label>Line:</ion-label>
+            <ion-checkbox id="line-checkbox" (ionChange)="updateInput('line')" justify="start" value="line"></ion-checkbox> 
+            <ion-input id="line-input" [disabled]="true" [clearInput]="true" [(ngModel)]="line"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Facebook:</ion-label>
+            <ion-checkbox id="facebook-checkbox" (ionChange)="updateInput('facebook')" justify="start" value="facebook"></ion-checkbox> 
+            <ion-input  id="facebook-input" [disabled]="true" [clearInput]="true" [(ngModel)]="facebook"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Instagram:</ion-label>
+            <ion-checkbox id="instagram-checkbox" (ionChange)="updateInput('instagram')" justify="start" value="instagram"></ion-checkbox> 
+            <ion-input id="instagram-input" [disabled]="true" [clearInput]="true" [(ngModel)]="instagram"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-button (click)="saveData()">SAVE</ion-button>
+      <ion-button (click)="bmiPage()">BMI</ion-button>
+    </ion-grid>
+
+
+</ion-content>

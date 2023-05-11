@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>
+          BMR Calculater
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<h1 style="text-align: center;"> BMR Calculater</h1>
+  <ion-grid>
+    <!-- <ion-radio-group [(ngModel)]="gender">
+      <ion-item>
+        <ion-label>Male</ion-label>
+        <ion-radio value="1"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Female</ion-label>
+        <ion-radio value="2"></ion-radio>
+      </ion-item>
+    </ion-radio-group> -->
+    <ion-list>
+      <ion-item>
+        <ion-select aria-label="gender" placeholder="Select Gender" (ionChange)="selectGender($event)">
+          <ion-select-option value="1">Male</ion-select-option>
+          <ion-select-option value="2">Female</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+      <ion-item>
+          <ion-label>Weight:
+          </ion-label>
+          <ion-input type="number" [clearInput]="true" placeholder="Enter weight (kg)" [(ngModel)]="weight"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Height:
+          </ion-label>
+          <ion-input type="number" [clearInput]="true" placeholder="Enter height (cm)" [(ngModel)]="height"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Age:
+        </ion-label>
+        <ion-input type="number" [clearInput]="true" placeholder="Enter Age (yrs)" [(ngModel)]="age"></ion-input>
+    </ion-item>
+  </ion-grid>
+  <div style="text-align: center;">
+      <ion-button id="alert" (click)="bmrCal()">Calculate</ion-button>
+      <ion-alert trigger="alert" header="Your BMR is"  message="{{bmr}}" [buttons]="alertButtons"></ion-alert>
+  </div>
+</ion-content>
